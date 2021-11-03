@@ -42,7 +42,7 @@
         tableauExt.extensions.settings.get("code"),
         {
           height: 600,
-          width: 1000,
+          width: 1200,
         }
       )
       .then((closePayload) => {

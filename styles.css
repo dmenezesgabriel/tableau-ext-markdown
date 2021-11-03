@@ -3,3 +3,13 @@ body {
   padding: 0px;
   overflow: hidden;
 }
+
+#markdownPreviewer {
+  margin: 20px;
+  padding: 5px;
+}
+
+.markdownPreviewerChild {
+  display: inline-block;
+  padding: 5px;
+}
