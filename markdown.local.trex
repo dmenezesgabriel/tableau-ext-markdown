@@ -4,7 +4,7 @@
        <default-locale>en_US</default-locale>
        <name resource-id="name"/>
        <description>Extension Description</description>
-       <author name="USERNAME" email="USER@example.com" organization="MyCo" website="https://www.example.com"/>
+       <author name="Gabriel Menezes" email="dmenezes.gabriel@gmail.com" website="https://dmenezesgabriel.github.io"/>
        <min-api-version>1.0</min-api-version>
        <source-location>
          <url>http://localhost:5500/index.html</url>
@@ -18,9 +18,7 @@
      </dashboard-extension>
      <resources>
        <resource id="name">
-         <text locale="en_US">name in English</text>
-         <text locale="fr_BE">name in French</text>
-         <text locale="de_DE">name in German</text>
+         <text locale="en_US">Tableau Markdown</text>
        </resource>
      </resources>
    </manifest>
