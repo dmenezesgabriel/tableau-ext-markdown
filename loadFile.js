@@ -5,7 +5,7 @@ control.addEventListener(
     var reader = new FileReader();
     reader.onload = function (event) {
       var contents = event.target.result;
-      document.querySelector("#output").value = contents;
+      document.querySelector("#markup").value = contents;
     };
     reader.onerror = function (event) {
       console.error("File could not be read! Code " + event.target.error.code);

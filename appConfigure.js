@@ -5,19 +5,22 @@
   let value = "";
 
   window.onload = function () {
+    let content = document.querySelector("#contentPreview");
+    let markup = document.querySelector("#markup");
+    let closeBtn = document.querySelector("#closeButton");
+
     loadFile();
     keyListener();
     tableauExt.extensions.initializeDialogAsync().then(function (openPayload) {
-      let closeBtn = document.querySelector("#closeButton");
-      let output = document.querySelector("#output");
       closeBtn.addEventListener("click", closeDialog);
-      output.value = openPayload;
+      markup.value = openPayload;
+      setContent();
     });
   };
 
   function closeDialog() {
-    let output = document.querySelector("#output");
-    tableauExt.extensions.settings.set(key, output.value);
+    let markup = document.querySelector("#markup");
+    tableauExt.extensions.settings.set(key, markup.value);
 
     tableauExt.extensions.settings.saveAsync().then((newSavedSettings) => {
       tableauExt.extensions.ui.closeDialog(
@@ -34,7 +37,8 @@
         var reader = new FileReader();
         reader.onload = function (event) {
           var contents = event.target.result;
-          document.querySelector("#output").value = contents;
+          document.querySelector("#markup").value = contents;
+          setContent();
         };
         reader.onerror = function (event) {
           console.error(
@@ -48,12 +52,15 @@
     );
   }
 
-  function keyListener() {
-    let content = document.querySelector("#content");
-    let output = document.querySelector("#output");
+  function setContent() {
+    let content = document.querySelector("#contentPreview");
+    let markup = document.querySelector("#markup");
+    content.innerHTML = marked.parse(markup.value);
+  }
 
+  function keyListener() {
     document.addEventListener("keyup", () => {
-      content.innerHTML = marked.parse(output.value);
+      setContent();
     });
   }
 })();
