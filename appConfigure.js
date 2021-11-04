@@ -3,24 +3,24 @@
 (function () {
   const key = "code";
   let value = "";
+  let editor;
 
   window.onload = function () {
     let content = document.querySelector("#contentPreview");
-    let markup = document.querySelector("#markup");
     let closeBtn = document.querySelector("#closeButton");
-
+    initEditor();
     loadFile();
     keyListener();
     tableauExt.extensions.initializeDialogAsync().then(function (openPayload) {
       closeBtn.addEventListener("click", closeDialog);
-      markup.value = openPayload;
+      editor.setValue(openPayload);
       setContent();
     });
   };
 
   function closeDialog() {
-    let markup = document.querySelector("#markup");
-    tableauExt.extensions.settings.set(key, markup.value);
+    let code = editor.getValue();
+    tableauExt.extensions.settings.set(key, code);
 
     tableauExt.extensions.settings.saveAsync().then((newSavedSettings) => {
       tableauExt.extensions.ui.closeDialog(
@@ -37,7 +37,7 @@
         var reader = new FileReader();
         reader.onload = function (event) {
           var contents = event.target.result;
-          document.querySelector("#markup").value = contents;
+          editor.setValue(contents);
           setContent();
         };
         reader.onerror = function (event) {
@@ -54,13 +54,21 @@
 
   function setContent() {
     let content = document.querySelector("#contentPreview");
-    let markup = document.querySelector("#markup");
-    content.innerHTML = marked.parse(markup.value);
+    let code = editor.getValue();
+    content.innerHTML = marked.parse(code);
   }
 
   function keyListener() {
     document.addEventListener("keyup", () => {
       setContent();
     });
+  }
+
+  function initEditor() {
+    let aceInstance = ace.edit("markup");
+    aceInstance.setTheme("ace/theme/sqlserver");
+    aceInstance.session.setMode("ace/mode/markdown");
+    aceInstance.session.setUseWrapMode(true);
+    editor = aceInstance;
   }
 })();

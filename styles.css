@@ -18,7 +18,18 @@ textarea {
   margin-left: auto;
 }
 
+#inputFile {
+  margin-top: 10px;
+}
+
+#markup {
+  height: 100%;
+  width: 100%;
+  border-right: 1px solid black;
+}
+
 #markdownPreviewer {
+  margin-top: 20px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 5px;
@@ -28,6 +39,7 @@ textarea {
 .markdownPreviewerChild {
   margin: 5px;
   height: 450px;
+  width: 600px;
   padding: 5px;
   overflow: auto;
 }
