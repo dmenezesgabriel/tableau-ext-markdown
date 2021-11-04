@@ -1,8 +1,13 @@
 body {
   margin: 0px;
   padding: 0px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
   display: flex;
   flex-direction: column;
+  font-size: 12px;
 }
 
 textarea {
@@ -20,56 +25,63 @@ button {
 }
 
 .btn {
-  background-color: #3498db;
-  border-radius: 5px;
+  background-color: #4996b2;
+  border-radius: 2em;
+  padding: 0.3em 1.2em;
+  margin: 0 0.3em 0.3em 0;
+  text-decoration: none;
+  font-size: smaller;
+  font-weight: 300;
   color: #fff;
+  text-align: center;
   cursor: pointer;
   margin: 10px;
-  padding: 6px 10px;
+  transition: all 0.2s;
+}
+
+.btn:hover {
+  background-color: #367e9c;
 }
 
 #inputButton {
   margin-top: 20px;
 }
 
+#closeButton {
+  margin: 20px;
+  right: 0;
+  bottom: 0;
+}
+
 .container {
   padding-right: 15px;
   padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
+}
+
+#markdownPreviewer {
+  margin: 5px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 5px;
+  border: 1px solid #b4b4b4;
+}
+
+.markdownPreviewerChild {
+  margin: 5px;
+  height: 200px;
+  width: 100%;
+  padding: 5px;
+  overflow: auto;
 }
 
 #markup {
   height: 100%;
   width: 100%;
-  border-right: 1px solid black;
-}
-
-#markdownPreviewer {
-  margin-top: 20px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 5px;
-  border: 1px solid black;
-}
-
-.markdownPreviewerChild {
-  margin: 5px;
-  height: 450px;
-  width: 600px;
-  padding: 5px;
-  overflow: auto;
+  border-right: 1px solid #b4b4b4;
 }
 
 #content {
   margin: 5px;
   padding: 5px;
   overflow: auto;
-}
-
-#closeButton {
-  margin: 20px;
-  position: fixed;
-  right: 0;
-  bottom: 0;
 }

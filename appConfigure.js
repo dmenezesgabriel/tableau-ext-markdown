@@ -69,6 +69,9 @@
     aceInstance.setTheme("ace/theme/sqlserver");
     aceInstance.session.setMode("ace/mode/markdown");
     aceInstance.session.setUseWrapMode(true);
+    aceInstance.setOptions({
+      fontSize: "10px",
+    });
     editor = aceInstance;
   }
 })();
