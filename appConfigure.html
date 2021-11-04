@@ -8,8 +8,10 @@
   <title>Settings Sample</title>
 
   <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.min.css">
 
   <!-- Extensions Library -->
+  <script src="./lib/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="./lib/tableau.extensions.1.latest.min.js"></script>
   <script src="./lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
   <script src="./lib/marked.min.js"></script>
@@ -25,16 +27,16 @@
 
 <body>
 
-  <div class="container">
+  <div class="container-fluid">
     <div id="inputButton">
       <label for='inputFile' class="btn">Upload file</label>
       <input type="file" class="btn" id="inputFile"></input>
     </div>
-    <div id="markdownPreviewer">
-      <div class="markdownPreviewerChildd">
+    <div class="row">
+      <div class="markdownPreviewerChild col">
         <div id="markup"></div>
       </div>
-      <div class="markdownPreviewerChild">
+      <div class="markdownPreviewerChild col">
         <div id="contentPreview"></div>
       </div>
     </div>

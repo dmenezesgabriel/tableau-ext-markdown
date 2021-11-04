@@ -41,8 +41,8 @@
         popupUrl,
         tableauExt.extensions.settings.get("code"),
         {
-          height: window.height,
-          width: window.width,
+          height: 600,
+          width: 1000,
         }
       )
       .then((closePayload) => {
