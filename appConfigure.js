@@ -15,6 +15,7 @@
       closeBtn.addEventListener("click", closeDialog);
       editor.setValue(openPayload);
       setContent();
+      editor.resize();
     });
   };
 
@@ -61,6 +62,7 @@
   function keyListener() {
     document.addEventListener("keyup", () => {
       setContent();
+      editor.resize();
     });
   }
 

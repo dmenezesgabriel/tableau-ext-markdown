@@ -1,19 +1,22 @@
-/* @import url(./reset-default-styles.css); */
-
-body {
-  margin: 0px;
-  padding: 0px;
-  display: flex;
-  flex-direction: column;
-}
-
 input[type="file"] {
   display: none;
 }
 
+.container-fluid {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#markdownPreviewer {
+  overflow: auto;
+  height: 500;
+}
+
 .markdownPreviewerChild {
   margin: 5px;
-  min-height: 200px;
+  min-height: 400px;
   min-width: 200px;
   padding: 5px;
   overflow: auto;
@@ -22,9 +25,18 @@ input[type="file"] {
 #markup {
   height: 100%;
   width: 100%;
-  border-right: 1px solid #b4b4b4;
 }
 
 #content {
   overflow: auto;
+}
+
+#contentPreview {
+  font-size: 12px;
+}
+h1 {
+}
+
+#contentPreview h1 {
+  font-size: 24px;
 }
