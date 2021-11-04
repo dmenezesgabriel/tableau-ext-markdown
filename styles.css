@@ -11,15 +11,32 @@ textarea {
   box-sizing: border-box;
 }
 
+input[type="file"] {
+  display: none;
+}
+
+button {
+  all: unset;
+}
+
+.btn {
+  background-color: #3498db;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  margin: 10px;
+  padding: 6px 10px;
+}
+
+#inputButton {
+  margin-top: 20px;
+}
+
 .container {
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
-}
-
-#inputFile {
-  margin-top: 10px;
 }
 
 #markup {
