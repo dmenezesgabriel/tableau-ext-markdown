@@ -40,6 +40,7 @@
           var contents = event.target.result;
           editor.setValue(contents);
           setContent();
+          editor.resize();
         };
         reader.onerror = function (event) {
           console.error(
@@ -72,7 +73,7 @@
     aceInstance.session.setMode("ace/mode/markdown");
     aceInstance.session.setUseWrapMode(true);
     aceInstance.setOptions({
-      fontSize: "10px",
+      fontSize: "0.5em",
     });
     editor = aceInstance;
   }

@@ -31,12 +31,30 @@ input[type="file"] {
   overflow: auto;
 }
 
-#contentPreview {
-  font-size: 12px;
-}
-h1 {
+#contentPreview h1 {
+  font-size: 1.5em;
 }
 
-#contentPreview h1 {
-  font-size: 24px;
+#contentPreview h2 {
+  font-size: 1.2em;
+}
+
+#contentPreview h3 {
+  font-size: 1em;
+}
+
+#contentPreview h4 {
+  font-size: 0.8em;
+}
+
+#contentPreview h5 {
+  font-size: 0.7em;
+}
+
+#contentPreview h5 {
+  font-size: 0.6em;
+}
+
+#contentPreview {
+  font-size: 0.5em;
 }
