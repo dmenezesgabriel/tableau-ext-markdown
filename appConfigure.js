@@ -11,11 +11,11 @@
     initEditor();
     loadFile();
     keyListener();
+    syncScroll();
     tableauExt.extensions.initializeDialogAsync().then(function (openPayload) {
       closeBtn.addEventListener("click", closeDialog);
       editor.setValue(openPayload);
       setContent();
-      editor.resize();
     });
   };
 
@@ -40,7 +40,6 @@
           var contents = event.target.result;
           editor.setValue(contents);
           setContent();
-          editor.resize();
         };
         reader.onerror = function (event) {
           console.error(
@@ -63,7 +62,6 @@
   function keyListener() {
     document.addEventListener("keyup", () => {
       setContent();
-      editor.resize();
     });
   }
 
@@ -74,7 +72,18 @@
     aceInstance.session.setUseWrapMode(true);
     aceInstance.setOptions({
       fontSize: "0.5em",
+      autoScrollEditorIntoView: true,
     });
     editor = aceInstance;
+  }
+
+  function syncScroll() {
+    let content = document.querySelector(".contentPreview");
+    editor.getSession().on("changeScrollTop", function (scroll) {
+      console.log(scroll);
+      console.log(content.scrollTop);
+      content.scrollTop = scroll;
+      console.log(content.scrollTop);
+    });
   }
 })();

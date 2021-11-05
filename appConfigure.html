@@ -27,24 +27,24 @@
 
 <body>
 
-  <div id="markdownPreviewer" class="container-fluid">
+  <div id="markdownPreviewer" class="container-fluid overflow-auto mt-3">
     <div id="inputButton">
-      <label for='inputFile' class="btn">Upload file</label>
+      <label for='inputFile' class="btn btn-primary btn-sm">Upload file</label>
       <input type="file" class="btn" id="inputFile"></input>
     </div>
-    <div class="row border m-3">
+    <div id="previwerWrapper" class="row border m-3">
       <div class="markdownPreviewerChild col p-0 m-0">
         <div id="markup" class="border border-right-0"></div>
       </div>
-      <div class="markdownPreviewerChild col p-0 m-0">
+      <div class="contentPreview markdownPreviewerChild col p-0 m-0">
         <div id="contentPreview" class="p-3"></div>
       </div>
     </div>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end mb-3">
+      <button id="closeButton" class="btn btn-primary btn-sm">Save & Close</button>
+    </div>
+  </div>
 
-  </div>
-  <div>
-    <button id="closeButton" class="btn">Save & Close</button>
-  </div>
 </body>
 
 </html>
