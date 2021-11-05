@@ -69,13 +69,4 @@
       );
     }
   }
-
-  function setWindowSize() {
-    var initialWidth = window.innerWidth;
-
-    window.addEventListener("resize", function () {
-      // Do something with 'initialWidth'
-      initialWidth = window.innerWidth;
-    });
-  }
 })();
