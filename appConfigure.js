@@ -80,10 +80,7 @@
   function syncScroll() {
     let content = document.querySelector(".contentPreview");
     editor.getSession().on("changeScrollTop", function (scroll) {
-      console.log(scroll);
-      console.log(content.scrollTop);
       content.scrollTop = scroll;
-      console.log(content.scrollTop);
     });
   }
 })();

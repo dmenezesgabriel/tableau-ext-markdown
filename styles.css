@@ -1,3 +1,18 @@
+body {
+  /* Tableau Secondary */
+  color: rgba(0, 0, 0, 0.7);
+}
+
+/*  Tableau Primary */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: rgba(0, 0, 0, 0.8);
+}
+
 input[type="file"] {
   display: none;
 }
@@ -19,6 +34,19 @@ input[type="file"] {
 
 #content {
   overflow: auto;
+  font-size: 1.2em;
+}
+
+.btn {
+  font-size: 0.5em !important;
+}
+
+.btn-primary {
+  background-color: #4996b2 !important;
+}
+
+.btn-primary:hover {
+  background-color: #367e9c !important;
 }
 
 #contentPreview h1 {
@@ -46,5 +74,5 @@ input[type="file"] {
 }
 
 #contentPreview {
-  font-size: 0.5em;
+  font-size: 0.6em;
 }
