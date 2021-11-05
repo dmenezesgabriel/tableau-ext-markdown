@@ -17,8 +17,6 @@ input[type="file"] {
   display: none;
 }
 
-#markdownPreviewer {
-}
 .markdownPreviewerChild {
   margin: 5px;
   height: 400px;
